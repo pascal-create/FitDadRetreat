@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 16 — November 2024 Tony Robbins</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-arena {
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .slide-arena::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/photos/16-tony-arena.jpg");
+    background-size: cover;
+    background-position: center 30%;
+    z-index: 1;
+    opacity: 0.42;
+  }
+  .slide-arena::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(6,6,6,0.92) 0%,
+        rgba(6,6,6,0.78) 30%,
+        rgba(6,6,6,0.82) 70%,
+        rgba(6,6,6,0.96) 100%);
+    z-index: 2;
+  }
+  .slide-arena .slide__inner { display: grid; grid-template-rows: auto auto 1fr auto; gap: 32px; z-index: 3; position: relative; }
+
+  .arena__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .arena__head .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .arena__head .when {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ink-muted);
+  }
+
+  .arena__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 144px;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: var(--ink-strong);
+  }
+  .arena__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .arena__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .arena__quotes {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .arena__quote {
+    border-left: 2px solid var(--rule-gold);
+    padding-left: 32px;
+  }
+  .arena__quote .q {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 38px;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: #FFFEFA;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .arena__quote .q em {
+    color: var(--gold);
+  }
+  .arena__quote .meta {
+    margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* Big call-out on right */
+  .arena__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 40px 36px;
+    background: rgba(6,6,6,0.78);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(201,169,110,0.30);
+    box-shadow: var(--shadow-elev-2);
+  }
+  .arena__caption .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .arena__caption .where {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+  }
+  .arena__caption .where em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .arena__caption .desc {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-size: 28px;
+    line-height: 1.4;
+    color: #FFFEFA;
+  }
+  .arena__caption .desc em {
+    color: var(--gold);
+  }
+
+  .arena__close {
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 30px;
+    color: rgba(248,244,237,0.85);
+    padding-top: 20px;
+    border-top: 1px solid var(--rule-gold);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .arena__close em { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="slide slide-arena">
+  <div class="photo-tint"></div>
+  <div class="slide__inner">
+
+    <div class="arena__head">
+      <span class="label">Two weeks after the firing</span>
+      <span class="when">November · 2024</span>
+    </div>
+
+    <h2 class="arena__h">Unleash<br>the <em>Power</em> Within.</h2>
+
+    <div class="arena__body">
+
+      <div class="arena__quotes">
+        <div class="arena__quote">
+          <p class="q">"If you don't adopt AI in your business, <em>you will not survive.</em>"</p>
+          <p class="meta">Day 1 · From the stage</p>
+        </div>
+        <div class="arena__quote">
+          <p class="q">"Don't just survive change. <em>Lead it. Teach it.</em> The people who help others through the future <em>are the future.</em>"</p>
+          <p class="meta">Day 3 · The line that built Symplifyai</p>
+        </div>
+      </div>
+
+      <div class="arena__caption">
+        <span class="label">In the room with me</span>
+        <div class="where">An <em>arena</em> full of entrepreneurs.</div>
+        <p class="desc">All looking to unleash <em>something brand new</em> inside themselves.</p>
+      </div>
+
+    </div>
+
+    <p class="arena__close">I flew home knowing I had to start something <em>brand new.</em></p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>16 / 35</span>
+  </div>
+</div>
+</body>
+</html>

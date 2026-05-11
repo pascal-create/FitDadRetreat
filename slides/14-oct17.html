@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 14 — October 17, 2024</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-date {
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,169,110,0.08), transparent 70%),
+      radial-gradient(ellipse 40% 60% at 15% 30%, rgba(201,169,110,0.04), transparent 70%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .slide-date .slide__inner { display: grid; grid-template-rows: auto 1fr auto; gap: 48px; z-index: 3; position: relative; }
+  .date__credit {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .date__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .date__head .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .date__head .org {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-muted);
+  }
+
+  .date__body {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 96px;
+  }
+
+  .date__big {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    line-height: 0.86;
+    letter-spacing: -0.04em;
+    color: var(--ink-strong);
+  }
+  .date__big .day {
+    display: block;
+    font-size: 280px;
+    color: var(--gold);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .date__big .month {
+    display: block;
+    font-size: 80px;
+    color: var(--ink);
+    margin-top: -32px;
+    letter-spacing: -0.03em;
+  }
+  .date__big .year {
+    display: block;
+    font-size: 64px;
+    color: var(--ink-muted);
+    font-style: italic;
+    margin-top: 16px;
+  }
+
+  .date__story h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 80px;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    margin-bottom: 36px;
+  }
+  .date__story h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .date__story p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--ink-muted);
+    border-left: 1px solid var(--rule-gold);
+    padding-left: 36px;
+    max-width: 850px;
+  }
+  .date__story p strong {
+    color: var(--ink-strong);
+    font-weight: 600;
+  }
+  .date__story p em {
+    color: var(--gold);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-date">
+  <div class="slide__inner">
+
+    <div class="date__head">
+      <span class="label">The conference I made happen</span>
+      <span class="org">Conseil économique du Nouveau-Brunswick</span>
+    </div>
+
+    <div class="date__body">
+      <div class="date__big">
+        <span class="day">17</span>
+        <span class="month">October</span>
+        <span class="year">2024</span>
+      </div>
+      <div class="date__story">
+        <h2>Dominic on stage<br>in <em>Moncton.</em></h2>
+        <p>
+          200 entrepreneurs in the room. Dominic on stage. Same lines he had said to me at Gusto — but now in front of <strong>everyone.</strong><br><br>
+          When he walked off, I knew. <em>The conversation I had been avoiding for two years was happening tomorrow.</em>
+        </p>
+      </div>
+    </div>
+
+    <p class="date__credit">Crédits photo : Maroc Lafontaine Côté et Philippe Manh Nguyen — CQCD</p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>14 / 35</span>
+  </div>
+</div>
+</body>
+</html>

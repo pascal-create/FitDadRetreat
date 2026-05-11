@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 07 — Tony Robbins quote</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-tquote {
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .slide-tquote::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/photos/07-tony-stage.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: var(--z-photo);
+    filter: contrast(1.05);
+  }
+  .slide-tquote::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 30% 50%, rgba(6,6,6,0.55) 0%, rgba(6,6,6,0.85) 60%, rgba(6,6,6,0.95) 100%),
+      linear-gradient(180deg, rgba(6,6,6,0.55) 0%, rgba(6,6,6,0.40) 50%, rgba(6,6,6,0.85) 100%);
+    z-index: var(--z-vignette);
+  }
+  .slide-tquote .slide__inner {
+    justify-content: center;
+    align-items: flex-start;
+    z-index: var(--z-content);
+    position: relative;
+  }
+
+  .tquote__label {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 64px;
+  }
+  .tquote__label .rule {
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+  .tquote__label span {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .tquote__mark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-size: 240px;
+    color: var(--gold);
+    opacity: 0.55;
+    line-height: 0.6;
+    margin-bottom: -32px;
+  }
+
+  .tquote__line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 96px;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    max-width: 1620px;
+  }
+
+  .tquote__line .accent {
+    color: var(--gold);
+  }
+
+  .tquote__attrib {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .tquote__attrib .rule {
+    width: 96px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+  .tquote__attrib .who {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .tquote__attrib .who em {
+    color: var(--gold);
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-tquote">
+  <div class="photo-tint"></div>
+  <div class="slide__inner">
+
+    <div class="tquote__label">
+      <span class="rule"></span>
+      <span>The line that landed first</span>
+    </div>
+
+    <div class="tquote__mark">"</div>
+    <p class="tquote__line">
+      People only change<br>
+      when the pain of staying the same<br>
+      is greater than the pain of <span class="accent">changing.</span>
+    </p>
+
+    <div class="tquote__attrib">
+      <span class="rule"></span>
+      <span class="who">Tony Robbins · <em>Unleash the Power Within</em> · Nov 2024</span>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act I — The Breaking Point</span>
+    <span>07 / 35</span>
+  </div>
+</div>
+</body>
+</html>

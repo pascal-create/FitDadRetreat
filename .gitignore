@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Source video for Tony stage frame — we already have the extracted JPG
+assets/IMG_5078.MOV
+assets/*.MOV
+assets/*.mov
+
+# Temporary
+all-slides.html
+*.log

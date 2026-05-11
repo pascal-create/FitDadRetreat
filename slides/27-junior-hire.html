@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 27 — The cheapest junior hire</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-jh {
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,169,110,0.10), transparent 65%),
+      var(--bg);
+  }
+  .slide-jh .slide__inner {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .jh__label {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+  .jh__label .rule { width: 56px; height: 1px; background: var(--rule-gold); }
+  .jh__label span {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .jh__line {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 132px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink-strong);
+    max-width: 1700px;
+    margin-bottom: 56px;
+  }
+  .jh__line em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .jh__perks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 1500px;
+  }
+  .jh__perk {
+    border-top: 1px solid var(--rule-gold);
+    padding-top: 20px;
+  }
+  .jh__perk .num {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+    font-size: 56px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 14px;
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .jh__perk .label {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .jh__perk .label em {
+    color: var(--gold);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-jh">
+  <div class="slide__inner">
+
+    <div class="jh__label">
+      <span class="rule"></span>
+      <span>The bridge to the tools</span>
+    </div>
+
+    <h2 class="jh__line">
+      AI is the cheapest, fastest<br>
+      <em>"junior hire"</em> I've ever made.
+    </h2>
+
+    <div class="jh__perks">
+      <div class="jh__perk">
+        <div class="num">01</div>
+        <div class="label">Works <em>24 hours</em> a day.</div>
+      </div>
+      <div class="jh__perk">
+        <div class="num">02</div>
+        <div class="label"><em>Never</em> asks for a raise.</div>
+      </div>
+      <div class="jh__perk">
+        <div class="num">03</div>
+        <div class="label"><em>Doesn't quit.</em> Doesn't take it personally.</div>
+      </div>
+      <div class="jh__perk">
+        <div class="num">04</div>
+        <div class="label">Costs <em>less than my coffee budget.</em></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Bridge — The Buyback Loop</span>
+    <span>27 / 35</span>
+  </div>
+</div>
+</body>
+</html>

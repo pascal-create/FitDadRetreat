@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 13 — The book and the lunch</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-bg { background: var(--bg); overflow: hidden; }
+  .slide-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/photos/13-gusto.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    filter: grayscale(0.3);
+    z-index: 1;
+  }
+  .slide-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(14,14,14,0.65) 0%, rgba(14,14,14,0.55) 50%, rgba(14,14,14,0.85) 100%);
+    z-index: 2;
+  }
+  .slide-bg .slide__inner {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 96px;
+    align-items: center;
+    z-index: 3;
+    position: relative;
+  }
+
+  /* Faux book cover — matches Éditions de l'Homme edition */
+  .book {
+    width: 360px;
+    height: 540px;
+    background: #F4ECDF;
+    box-shadow: var(--shadow-elev-3);
+    position: relative;
+    padding: 28px 26px 22px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #111;
+    transform: rotate(-1.5deg);
+  }
+  .book::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 8px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.18), transparent);
+    pointer-events: none;
+  }
+  .book__top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .book__authors {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #E1322B;
+    line-height: 1.05;
+  }
+  .book__preface {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #111;
+    margin-top: 6px;
+    max-width: 240px;
+  }
+  .book__title {
+    font-family: 'Manrope', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 0.95;
+    color: #111;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-top: 24px;
+  }
+  .book__title em {
+    color: #E1322B;
+    font-style: normal;
+  }
+  .book__sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #111;
+    margin-top: 14px;
+    max-width: 200px;
+  }
+  .book__pub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #111;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    padding-top: 8px;
+    text-align: right;
+  }
+  .book__smoke {
+    position: absolute;
+    right: 14px;
+    bottom: 56px;
+    width: 110px;
+    height: 240px;
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  /* Right column */
+  .bg__head {
+    margin-bottom: 36px;
+  }
+  .bg__head .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .bg__head .label::before {
+    content: "";
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+
+  .bg__head h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    margin-top: 24px;
+  }
+  .bg__head h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .bg__details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .bg__details dt {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 8px;
+  }
+  .bg__details dd {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-size: 28px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .bg__details dd em {
+    color: var(--gold);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-bg">
+  <div class="photo-tint photo-tint--warm"></div>
+  <div class="slide__inner">
+
+    <div class="book">
+      <div class="book__top">
+        <span class="book__authors">Dominic Gagnon<br>Isabelle Naessens</span>
+        <p class="book__preface">Préface d'Isabelle Hudon, Banque de développement du Canada</p>
+        <h3 class="book__title">Et&nbsp;si l'entrepreneuriat rendait <em>fou&nbsp;?</em></h3>
+        <p class="book__sub">Quand génie et vulnérabilité se côtoient</p>
+      </div>
+      <p class="book__pub">Les Éditions de l'Homme</p>
+      <svg class="book__smoke" viewBox="0 0 110 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <radialGradient id="smoke" cx="50%" cy="20%" r="60%">
+            <stop offset="0%" stop-color="#888" stop-opacity="0.45"/>
+            <stop offset="60%" stop-color="#666" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#333" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="58" cy="40" rx="42" ry="28" fill="url(#smoke)"/>
+        <ellipse cx="46" cy="22" rx="28" ry="18" fill="url(#smoke)"/>
+        <ellipse cx="70" cy="58" rx="22" ry="14" fill="url(#smoke)" opacity="0.6"/>
+        <path d="M52 80 L40 130 L36 180 L42 220 L56 220 L52 180 L60 130 Z" fill="#222" opacity="0.85"/>
+        <rect x="44" y="115" width="16" height="60" fill="#fff" opacity="0.85"/>
+        <rect x="38" y="115" width="34" height="6" fill="#222" opacity="0.85"/>
+      </svg>
+    </div>
+
+    <div>
+      <div class="bg__head">
+        <span class="label">Mid-2024 — the book and the lunch</span>
+        <h2>I sent him a <em>LinkedIn message.</em><br>He invited me to lunch.</h2>
+      </div>
+
+      <dl class="bg__details">
+        <dt>Where</dt>
+        <dd>Gusto, Moncton — <em>three hours.</em> They kicked us out.</dd>
+        <dt>What he said</dt>
+        <dd>"AI is coming. Entrepreneurs who don't bring it inside their business in 12 months <em>won't be here in 5 years.</em>"</dd>
+        <dt>And then</dt>
+        <dd>"You're running Mistral like a <em>family.</em> Run it like a <em>hockey team</em> — everything will change."</dd>
+      </dl>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>13 / 35</span>
+  </div>
+</div>
+</body>
+</html>

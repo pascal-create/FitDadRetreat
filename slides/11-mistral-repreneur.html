@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 11 — 2021 Mistral repreneur</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-yr { background: var(--bg); }
+  .slide-yr .slide__inner { display: grid; grid-template-rows: auto 1fr auto; gap: 24px; }
+
+  .yr__chapter { display: flex; align-items: center; gap: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+  .yr__chapter .num { font-family: var(--font-display); font-weight: 400; font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0; font-size: 48px; color: var(--gold); line-height: 1; font-variant-numeric: lining-nums tabular-nums; letter-spacing: -0.02em; }
+  .yr__chapter .label { font-family: var(--font-body); font-size: 16px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-muted); }
+  .yr__chapter .rule { flex: 1; height: 1px; background: var(--rule); }
+  .yr__chapter .year { font-family: var(--font-display); font-weight: 500; font-size: 32px; color: var(--ink); letter-spacing: 0.04em; }
+
+  .yr__body { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 96px; }
+
+  .yr__h { font-family: var(--font-display); font-weight: 400; font-variation-settings: "opsz" 144, "SOFT" 30; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; color: var(--ink-strong); }
+  .yr__h em { font-style: italic; color: var(--gold); font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1; }
+  .yr__sub { font-family: var(--font-display); font-style: italic; font-weight: 350; font-variation-settings: "opsz" 96, "SOFT" 60, "WONK" 1; font-size: 26px; color: var(--ink-muted); margin-top: 28px; letter-spacing: -0.01em; line-height: 1.3; max-width: 640px; }
+
+  .yr__quote { font-family: var(--font-display); font-style: italic; font-weight: 350; font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1; font-size: 40px; line-height: 1.3; letter-spacing: -0.015em; color: var(--ink-muted); border-left: 1px solid var(--rule-gold); padding-left: 40px; }
+  .yr__quote em { color: var(--ink-strong); font-style: italic; }
+
+  .yr__quote .badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--rule-gold);
+    padding: 6px 14px;
+    margin-bottom: 24px;
+  }
+
+  .yr__timeline { display: flex; align-items: center; gap: 16px; padding-top: 24px; }
+  .yr__timeline .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-faint); }
+  .yr__timeline .dot--active { background: var(--gold); width: 12px; height: 12px; box-shadow: 0 0 0 4px rgba(201,169,110,0.18); }
+  .yr__timeline .seg { flex: 1; height: 1px; background: var(--rule); }
+  .yr__timeline .yr-label { font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.32em; color: var(--ink-faint); }
+  .yr__timeline .yr-label--active { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="slide slide-yr">
+  <div class="slide__inner">
+
+    <div class="yr__chapter">
+      <span class="num">03</span>
+      <span class="label">Chapter three — the repreneur move</span>
+      <span class="rule"></span>
+      <span class="year">2021</span>
+    </div>
+
+    <div class="yr__body">
+      <div>
+        <h1 class="yr__h"><em>Mistral.</em></h1>
+        <p class="yr__sub">An established design studio. Founded in 2009. Bought from the retiring owner — seven employees, paper-based, ready for transformation.</p>
+      </div>
+      <div>
+        <p class="yr__quote">
+          <span class="badge">Repreneur — not founder</span><br>
+          I didn't <em>build</em> Mistral. I <em>bought</em> it.<br><br>
+          Three companies now. Memories2Go on weekends. MyPropertyTour on the side. Mistral every weekday morning.<br><br>
+          <em>Year one: learning. Year two: breaking.</em>
+        </p>
+      </div>
+    </div>
+
+    <div class="yr__timeline">
+      <span class="yr-label">2012</span>
+      <span class="dot"></span>
+      <span class="seg"></span>
+      <span class="yr-label">2020</span>
+      <span class="dot"></span>
+      <span class="seg"></span>
+      <span class="yr-label yr-label--active">2021</span>
+      <span class="dot dot--active"></span>
+      <span class="seg"></span>
+      <span class="dot"></span>
+      <span class="seg"></span>
+      <span class="dot"></span>
+      <span class="yr-label">today</span>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>11 / 35</span>
+  </div>
+</div>
+</body>
+</html>

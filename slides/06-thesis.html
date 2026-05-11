@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 06 — The thesis</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-thesis {
+    background:
+      radial-gradient(ellipse 70% 70% at 50% 50%, rgba(201,169,110,0.07), transparent 65%),
+      var(--bg);
+  }
+  .slide-thesis .slide__inner {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .thesis__label {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+  .thesis__label .rule {
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+  .thesis__label span {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .thesis__line {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 100px;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    max-width: 1700px;
+  }
+
+  .thesis__line em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .thesis__line strong {
+    font-weight: 600;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 600;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-thesis">
+  <div class="slide__inner">
+
+    <div class="thesis__label">
+      <span class="rule"></span>
+      <span>The new equation</span>
+      <span class="rule"></span>
+    </div>
+
+    <h1 class="thesis__line">
+      AI: <em>not to replace us.</em><br>
+      To buy back our time —<br>
+      so we build companies that grow<br>
+      <strong>without costing us the life we want.</strong>
+    </h1>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act I — The Breaking Point</span>
+    <span>06 / 35</span>
+  </div>
+</div>
+</body>
+</html>

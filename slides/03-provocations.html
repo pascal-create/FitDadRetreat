@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 03 — Three provocations</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-prov {
+    background: var(--bg);
+  }
+  .slide-prov .slide__inner {
+    justify-content: center;
+  }
+
+  .prov__head {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 64px;
+  }
+  .prov__head .label {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .prov__head .rule {
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+
+  .prov__list {
+    display: grid;
+    gap: 36px;
+    max-width: 1620px;
+  }
+
+  .prov__item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 32px;
+    align-items: baseline;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .prov__item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+  .prov__num {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+    font-size: 96px;
+    line-height: 1;
+    color: var(--gold);
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .prov__q {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink-strong);
+  }
+
+  .prov__q em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-prov">
+  <div class="slide__inner">
+
+    <div class="prov__head">
+      <span class="rule"></span>
+      <span class="label">Three honest questions</span>
+    </div>
+
+    <div class="prov__list">
+
+      <div class="prov__item">
+        <span class="prov__num">01</span>
+        <span class="prov__q">Who in this room answered an email <em>after bedtime</em> last night?</span>
+      </div>
+
+      <div class="prov__item">
+        <span class="prov__num">02</span>
+        <span class="prov__q">Who has a kid who has asked, <em>"are you almost done?"</em> — and you knew the answer was no?</span>
+      </div>
+
+      <div class="prov__item">
+        <span class="prov__num">03</span>
+        <span class="prov__q">Who is doing $35-an-hour work, when <em>your hour</em> is worth $250?</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act I — The Breaking Point</span>
+    <span>03 / 35</span>
+  </div>
+</div>
+</body>
+</html>

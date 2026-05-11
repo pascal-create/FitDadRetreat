@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 15 — The hardest day of my life</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-fire {
+    background:
+      radial-gradient(ellipse 100% 80% at 50% 100%, rgba(0,0,0,0.7), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 30%, rgba(201,169,110,0.05), transparent 70%),
+      var(--bg);
+  }
+  .slide-fire .slide__inner {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .fire__date {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .fire__date::before, .fire__date::after {
+    content: "";
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+
+  .fire__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 156px;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink-strong);
+    max-width: 1500px;
+    margin-bottom: 56px;
+  }
+  .fire__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .fire__num {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 32px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    color: var(--gold);
+    margin-bottom: 56px;
+  }
+  .fire__num .a, .fire__num .b {
+    font-size: 200px;
+    line-height: 1;
+    color: var(--ink-strong);
+    font-style: normal;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .fire__num .of {
+    font-size: 60px;
+    color: var(--gold);
+  }
+
+  .fire__caption {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    color: var(--ink-muted);
+    max-width: 1100px;
+    line-height: 1.4;
+  }
+  .fire__caption em { color: var(--ink-strong); }
+
+  .fire__note {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    max-width: 900px;
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: var(--ink-faint);
+    line-height: 1.55;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-fire">
+  <div class="slide__inner">
+
+    <span class="fire__date">October 18, 2024 · the next morning</span>
+
+    <h2 class="fire__h">The hardest day<br>of my <em>life.</em></h2>
+
+    <div class="fire__num">
+      <span class="a">5</span>
+      <span class="of">of</span>
+      <span class="b">7</span>
+    </div>
+
+    <p class="fire__caption">
+      Full-time employees, let go. <em>I kept the two who wanted to build something new with me.</em>
+    </p>
+
+    <p class="fire__note">
+      I have a video from that morning. I'm not going to show it. <em>Some moments aren't for stages.</em>
+    </p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>15 / 35</span>
+  </div>
+</div>
+</body>
+</html>

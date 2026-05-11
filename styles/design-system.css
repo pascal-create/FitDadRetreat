@@ -1,0 +1,294 @@
+/* ============================================
+   BUY BACK YOUR TIME — FitDad Keynote
+   Design system: Editorial Cinema Brutalism
+   ============================================ */
+
+/* ---------- Fonts (locally hosted for PDF/offline fidelity) ---------- */
+@import url('../assets/fonts/fonts.css');
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Color — warm cinematic dark */
+  --bg:           #0E0E0E;
+  --bg-soft:      #161616;
+  --bg-deep:      #060606;
+
+  --ink:          #F8F4ED;       /* warm cream — primary on dark */
+  --ink-strong:   #FFFEFA;       /* hero text */
+  --ink-muted:    rgba(248, 244, 237, 0.58);
+  --ink-faint:    rgba(248, 244, 237, 0.32);
+
+  --gold:         #C9A96E;       /* champagne — primary accent */
+  --gold-bright:  #E0C285;
+  --gold-soft:    rgba(201, 169, 110, 0.20);
+
+  --rule:         rgba(248, 244, 237, 0.14);
+  --rule-gold:    rgba(201, 169, 110, 0.55);
+
+  /* Typography — sized for a 1920×1080 stage slide */
+  --font-display: 'Fraunces', 'EB Garamond', 'Times New Roman', serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+
+  /* Type scale */
+  --t-eyebrow:    18px;          /* small caps label */
+  --t-caption:    24px;
+  --t-body:       36px;
+  --t-subhead:    52px;
+  --t-section:    96px;
+  --t-display:    180px;         /* big quote */
+  --t-mega:       260px;         /* big number */
+
+  /* Layout */
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+  --gutter:   96px;
+  --col:      144px;             /* 12-col grid: (1920 - 2*96) / 12 = 144 */
+  --safe-top: 72px;              /* projector safe area */
+  --safe-bottom: 120px;          /* projector safe area + visual breathing */
+
+  /* Spacing scale — use these instead of ad-hoc px values */
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10:144px;
+
+  /* Depth — layered, color-tinted shadows (champagne + black) */
+  --shadow-elev-1:
+    0 1px 2px rgba(0,0,0,0.35),
+    0 6px 16px rgba(0,0,0,0.28),
+    0 0 0 1px rgba(201,169,110,0.06);
+  --shadow-elev-2:
+    0 2px 4px rgba(0,0,0,0.40),
+    0 14px 36px rgba(0,0,0,0.45),
+    0 24px 60px rgba(6,6,6,0.55),
+    0 0 0 1px rgba(201,169,110,0.10);
+  --shadow-elev-3:
+    0 4px 8px rgba(0,0,0,0.45),
+    0 24px 48px rgba(6,6,6,0.55),
+    0 48px 96px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(201,169,110,0.14),
+    inset 0 1px 0 rgba(248,244,237,0.04);
+  --shadow-glow-gold:
+    0 0 0 1px rgba(201,169,110,0.30),
+    0 0 24px rgba(201,169,110,0.18),
+    0 24px 60px rgba(0,0,0,0.5);
+
+  /* Z-index layering system */
+  --z-photo:      1;
+  --z-vignette:   2;
+  --z-content:    3;
+  --z-chrome:     4;
+  --z-grain:      5;
+  --z-floating:   6;
+
+  /* Motion */
+  --ease-emph: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-soft: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+/* ---------- Print: lock pages to 16:9 1920x1080 for PDF export ---------- */
+@page { size: 1920px 1080px; margin: 0; }
+@media print {
+  html, body { width: 1920px; height: 1080px; overflow: hidden; }
+  .slide { page-break-after: always; page-break-inside: avoid; }
+  /* keep the grain layer visible in print */
+  .slide::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+/* force background gradients/colors to print */
+.slide, .slide *, .slide::before, .slide::after {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+img { max-width: 100%; display: block; }
+
+/* ---------- Slide frame ---------- */
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  isolation: isolate;
+}
+
+.slide__inner {
+  position: absolute;
+  inset: 0;
+  padding: var(--safe-top) var(--gutter) var(--safe-bottom) var(--gutter);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Grain (subtle film texture) ---------- */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.10;
+  mix-blend-mode: overlay;
+  z-index: 5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+}
+
+/* ---------- Typography primitives ---------- */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+}
+.eyebrow::before {
+  content: "";
+  width: 56px;
+  height: 1px;
+  background: var(--rule-gold);
+  display: inline-block;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--t-caption);
+  font-weight: 400;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.label-num {
+  font-family: var(--font-body);
+  font-size: var(--t-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+  letter-spacing: -0.02em;
+  line-height: 0.96;
+  color: var(--ink-strong);
+}
+
+.display--italic {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: 1.55;          /* generous on body — matches editorial reading rhythm */
+  color: var(--ink);
+}
+
+.body-text--muted {
+  color: var(--ink-muted);
+}
+
+/* ---------- Rules ---------- */
+.rule {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  width: 100%;
+}
+.rule--gold {
+  background: var(--rule-gold);
+}
+
+/* ---------- Vignette (for emotional slides) ---------- */
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-vignette);
+  background:
+    radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.45) 100%);
+}
+
+/* ---------- Photo treatment ----------
+   Use on any element that holds a background-image of a photo.
+   Layers a champagne color cast (mix-blend-multiply) under the dark
+   gradient overlay so photos read as part of the brand world,
+   not stock images dropped in. Apply alongside your slide-specific
+   ::after gradient — this sits between the photo and that overlay.       */
+.photo-tint {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-photo);
+  background:
+    radial-gradient(ellipse 80% 70% at 30% 30%, rgba(201,169,110,0.28), transparent 65%),
+    linear-gradient(180deg, rgba(31,22,12,0.55) 0%, rgba(6,6,6,0.65) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.photo-tint--cool {
+  background:
+    radial-gradient(ellipse 70% 60% at 70% 30%, rgba(86,108,140,0.40), transparent 65%),
+    linear-gradient(180deg, rgba(8,10,18,0.55) 0%, rgba(6,6,6,0.70) 100%);
+}
+.photo-tint--warm {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 70%, rgba(201,169,110,0.45), transparent 70%),
+    linear-gradient(180deg, rgba(40,26,14,0.50) 0%, rgba(6,6,6,0.60) 100%);
+}
+
+/* ---------- Page chrome (shared footer) ---------- */
+.slide__chrome {
+  position: absolute;
+  bottom: 48px;
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  z-index: 4;
+}
+.slide__chrome span:nth-child(2) {
+  color: var(--gold);
+}
+
+/* ---------- Utilities ---------- */
+.gold       { color: var(--gold); }
+.gold-light { color: var(--gold-bright); }
+.muted      { color: var(--ink-muted); }
+.strong     { color: var(--ink-strong); }
+.italic     { font-style: italic; }
+.center     { text-align: center; }
+.right      { text-align: right; }

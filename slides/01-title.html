@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 01 — Title</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-title {
+    background:
+      radial-gradient(ellipse 70% 55% at 25% 110%, rgba(201, 169, 110, 0.14), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 0%,  rgba(201, 169, 110, 0.05), transparent 70%),
+      var(--bg);
+  }
+
+  .slide-title .slide__inner {
+    justify-content: space-between;
+  }
+
+  /* Top row: eyebrow + brand */
+  .title__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 3;
+    position: relative;
+  }
+
+  .title__brand {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* Hero block — asymmetric, slightly off-grid */
+  .title__hero {
+    z-index: 3;
+    position: relative;
+  }
+
+  .title__hero h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink-strong);
+  }
+
+  .title__hero .more {
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+    font-size: 300px;
+    display: block;
+    color: var(--ink);
+  }
+
+  .title__hero .human {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-size: 300px;
+    color: var(--gold);
+    display: block;
+    margin-left: 96px;     /* indent for editorial offset */
+    letter-spacing: -0.045em;
+  }
+
+  .title__hero .human .period {
+    color: var(--gold-bright);
+    font-style: normal;
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    margin-left: 2px;
+  }
+
+  /* Subtitle */
+  .title__sub {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 32px;
+    z-index: 3;
+    position: relative;
+  }
+  .title__sub .rule {
+    width: 80px;
+    height: 1px;
+    background: var(--rule-gold);
+    border: 0;
+  }
+  .title__sub p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 96, "SOFT" 60, "WONK" 1;
+    font-size: 34px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--ink-muted);
+    max-width: 1100px;
+  }
+
+  /* Bottom row: speaker + meta */
+  .title__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 3;
+    position: relative;
+  }
+
+  .title__speaker {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .title__speaker .name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-variation-settings: "opsz" 60, "SOFT" 20;
+    font-size: 56px;
+    color: var(--ink-strong);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .title__speaker .role {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .title__meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .title__meta .where {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .title__meta .when {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--ink-muted);
+  }
+
+  /* Tiny vertical mark, top-right */
+  .title__mark {
+    position: absolute;
+    top: var(--safe-top);
+    right: var(--gutter);
+    width: 1px;
+    height: 96px;
+    background: var(--rule-gold);
+    z-index: 3;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-title">
+  <div class="title__mark"></div>
+
+  <div class="slide__inner">
+
+    <div class="title__top">
+      <span class="eyebrow">Keynote · Pascal DeGrâce</span>
+      <span class="title__brand">Symplifyai · Mistral</span>
+    </div>
+
+    <div class="title__hero">
+      <h1>
+        <span class="more">More</span>
+        <span class="human">Human<span class="period">.</span></span>
+      </h1>
+
+      <div class="title__sub">
+        <hr class="rule">
+        <p>How AI gave me my son back — and how it can give you the life you actually want.</p>
+      </div>
+    </div>
+
+    <div class="title__bottom">
+      <div class="title__speaker">
+        <span class="name">Pascal DeGrâce</span>
+        <span class="role">Founder · Symplifyai · Repreneur · Mistral</span>
+      </div>
+      <div class="title__meta">
+        <span class="where">FitDad Retreat 2026</span>
+        <span class="when">Driven Dad Method</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

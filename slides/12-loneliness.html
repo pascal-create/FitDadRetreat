@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 12 — The loneliness</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-lone {
+    background:
+      radial-gradient(ellipse 70% 60% at 75% 50%, rgba(201,169,110,0.06), transparent 70%),
+      var(--bg);
+    overflow: hidden;
+  }
+
+  .slide-lone .slide__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 96px;
+    z-index: 3;
+    position: relative;
+  }
+
+  .lone__left h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 144px;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: var(--ink-strong);
+  }
+  .lone__left h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .lone__left .badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--rule-gold);
+    padding: 8px 16px;
+    margin-bottom: 36px;
+  }
+
+  .lone__right { padding-left: 32px; border-left: 1px solid var(--rule-gold); }
+
+  .lone__list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+
+  .lone__item {
+    display: flex; align-items: baseline; gap: 16px;
+    font-family: var(--font-body);
+    font-size: 24px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .lone__item::before {
+    content: "—";
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 24px;
+    flex: 0 0 auto;
+  }
+
+  .lone__close {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
+  .lone__close em { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="slide slide-lone">
+  <div class="slide__inner">
+
+    <div class="lone__left">
+      <span class="badge">A 7-figure stress machine</span>
+      <h2>I was the only one <em>feeding it.</em></h2>
+    </div>
+
+    <div class="lone__right">
+      <div class="lone__list">
+        <div class="lone__item">I was doing the research.</div>
+        <div class="lone__item">I was doing the sales calls.</div>
+        <div class="lone__item">I was doing the marketing.</div>
+        <div class="lone__item">I was writing the proposals.</div>
+        <div class="lone__item">I was running the discovery sessions.</div>
+        <div class="lone__item">I was putting out fires every afternoon.</div>
+      </div>
+      <p class="lone__close">
+        The team was at the bottom of the mountain — <em>waiting for me to climb back down with food.</em>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>12 / 35</span>
+  </div>
+</div>
+</body>
+</html>

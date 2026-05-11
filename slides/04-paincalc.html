@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 04 — The pain calc</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-pain {
+    background: var(--bg);
+  }
+  .slide-pain .slide__inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 40px;
+  }
+
+  .pain__head h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    max-width: 1500px;
+  }
+  .pain__head h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 70, "WONK" 1;
+  }
+
+  .pain__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: stretch;
+  }
+
+  .pain__col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-gold);
+  }
+
+  .pain__col-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pain__col-num {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+    font-size: 84px;
+    color: var(--gold);
+    line-height: 1;
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .pain__col-label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: right;
+  }
+
+  .pain__col-formula {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink-strong);
+  }
+  .pain__col-formula .x {
+    color: var(--gold);
+    font-style: normal;
+    font-variation-settings: normal;
+    margin: 0 12px;
+  }
+  .pain__col-formula .var {
+    color: var(--ink-muted);
+    font-style: normal;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.7em;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--rule-gold);
+    padding: 0 14px 4px 14px;
+    display: inline-block;
+  }
+
+  .pain__col-eq {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: var(--ink-muted);
+    line-height: 1.45;
+    margin-top: auto;
+  }
+
+  .pain__reveal {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .pain__reveal p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .pain__reveal p em {
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-pain">
+  <div class="slide__inner">
+
+    <div class="pain__head">
+      <h2>Open your booklet to <em>page three.</em><br>Do this with me.</h2>
+    </div>
+
+    <div class="pain__cols">
+
+      <div class="pain__col">
+        <div class="pain__col-head">
+          <span class="pain__col-num">01</span>
+          <span class="pain__col-label">The cost in dollars</span>
+        </div>
+        <div class="pain__col-formula">
+          <span class="var">hours wasted</span><span class="x">×</span><span class="var">$ / hour</span>
+        </div>
+        <p class="pain__col-eq">Hours last week on tasks that aren't your number-one job — emails, proposals, posting, scheduling — multiplied by your real hourly rate.</p>
+      </div>
+
+      <div class="pain__col">
+        <div class="pain__col-head">
+          <span class="pain__col-num">02</span>
+          <span class="pain__col-label">The cost in moments</span>
+        </div>
+        <div class="pain__col-formula">
+          <span class="var">hours wasted</span><span class="x">×</span><span class="var">bedtimes missed</span>
+        </div>
+        <p class="pain__col-eq">Same hours. Different currency. Bath times. Soccer practices. Dinners eaten cold. Mornings you weren't there.</p>
+      </div>
+
+    </div>
+
+    <div class="pain__reveal">
+      <p>That's what staying the same is <em>costing you.</em></p>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act I — The Breaking Point</span>
+    <span>04 / 35</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 28 — The belief</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-bel {
+    background:
+      radial-gradient(ellipse 70% 70% at 50% 50%, rgba(201,169,110,0.07), transparent 70%),
+      var(--bg);
+  }
+  .slide-bel .slide__inner {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bel__label {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+  .bel__label .rule { width: 56px; height: 1px; background: var(--rule-gold); }
+  .bel__label span {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .bel__row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+    max-width: 1700px;
+  }
+
+  .bel__word {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 128px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink-strong);
+  }
+  .bel__word--strike {
+    color: var(--ink-faint);
+    text-decoration: line-through;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 5px;
+  }
+  .bel__word em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .bel__div {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 56px;
+    color: var(--gold);
+  }
+
+  .bel__sub {
+    margin-top: 56px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    color: var(--ink-muted);
+    max-width: 1300px;
+    line-height: 1.45;
+  }
+  .bel__sub em { color: var(--ink-strong); }
+  .bel__sub strong { color: var(--gold); font-weight: 400; font-style: italic; }
+
+  .bel__pillars {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1500px;
+    width: 100%;
+  }
+  .pillar {
+    border-top: 1px solid var(--rule-gold);
+    padding-top: 22px;
+    text-align: left;
+  }
+  .pillar .lbl {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .pillar .h {
+    margin-top: 12px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink-strong);
+  }
+  .pillar .h em { color: var(--gold); }
+  .pillar .d {
+    margin-top: 14px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+  }
+  .pillar .d strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="slide slide-bel">
+  <div class="slide__inner">
+
+    <div class="bel__label">
+      <span class="rule"></span>
+      <span>If you take one thing</span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="bel__row">
+      <span class="bel__word bel__word--strike">Productivity.</span>
+      <span class="bel__div">→</span>
+      <span class="bel__word"><em>Presence.</em></span>
+    </div>
+
+    <p class="bel__sub">
+      Hand the <strong>boring</strong> to AI.<br>
+      Spend the time you bought back on what <em>only you</em> can do —<br>
+      and on the people who notice when you're not there.
+    </p>
+
+    <div class="bel__pillars">
+      <div class="pillar">
+        <span class="lbl">Delegate</span>
+        <p class="h">The <em>boring.</em></p>
+        <p class="d">Inbox triage. Follow-ups. Note-taking. Scheduling. Receipts. <strong>The work that drains you.</strong> Hand it to an agent.</p>
+      </div>
+      <div class="pillar">
+        <span class="lbl">Focus</span>
+        <p class="h">On what <em>only you</em> can do.</p>
+        <p class="d">The work no AI can fake — taste, judgment, the relationships that built your business. <strong>That's where your hour belongs.</strong></p>
+      </div>
+      <div class="pillar">
+        <span class="lbl">Be present</span>
+        <p class="h"><em>Proximity.</em> Connection.</p>
+        <p class="d">Most of us never have time to be human — the business is running us. <strong>AI buys back the hours.</strong> You spend them being there.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act III — The Handoff</span>
+    <span>28 / 35</span>
+  </div>
+</div>
+</body>
+</html>

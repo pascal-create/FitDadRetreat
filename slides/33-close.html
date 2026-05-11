@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 33 — The close</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-close {
+    background: #060606;
+    overflow: hidden;
+  }
+
+  /* Hero photo, anchored bottom-right with heavy darken+gold tint */
+  .close__photo {
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/photos/33-fatherson.jpg");
+    background-size: cover;
+    background-position: center 60%;
+    z-index: 1;
+  }
+
+  /* Cinematic overlay — dark with golden warmth */
+  .close__photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(6,6,6,0.85) 0%,
+        rgba(6,6,6,0.5) 35%,
+        rgba(6,6,6,0.35) 60%,
+        rgba(6,6,6,0.85) 100%),
+      linear-gradient(90deg,
+        rgba(6,6,6,0.7) 0%,
+        rgba(6,6,6,0.2) 50%,
+        rgba(6,6,6,0.7) 100%);
+  }
+
+  .slide-close .slide__inner {
+    justify-content: space-between;
+    z-index: 3;
+    position: relative;
+  }
+
+  .close__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .close__eyebrow {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .close__eyebrow::before {
+    content: "";
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+
+  .close__brand {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .close__center {
+    text-align: center;
+    max-width: 1700px;
+    margin: 0 auto;
+    text-shadow: 0 4px 32px rgba(0,0,0,0.6);
+  }
+
+  .close__h {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 124px;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #FFFEFA;
+  }
+
+  .close__h .yes {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+
+  .close__rule {
+    width: 96px;
+    height: 1px;
+    background: var(--rule-gold);
+    border: 0;
+    margin: 48px auto;
+  }
+
+  .close__action {
+    font-family: var(--font-body);
+    font-size: 26px;
+    line-height: 1.55;
+    color: rgba(248, 244, 237, 0.85);
+    max-width: 920px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+
+  .close__action strong {
+    color: #FFFEFA;
+    font-weight: 600;
+  }
+
+  .close__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-direction: column;
+  }
+
+  .close__signoff {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-size: 30px;
+    color: rgba(248, 244, 237, 0.55);
+    letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-close">
+  <div class="close__photo"></div>
+  <div class="photo-tint photo-tint--warm"></div>
+
+  <div class="slide__inner">
+
+    <div class="close__top">
+      <span class="close__eyebrow">Act III — The Handoff</span>
+      <span class="close__brand">Pascal DeGrâce · FitDad 2026</span>
+    </div>
+
+    <div class="close__center">
+      <h2 class="close__h">
+        Two years from now,<br>
+        your kid is going to remember<br>
+        whether you were there <span class="yes">or not.</span>
+      </h2>
+
+      <hr class="close__rule">
+
+      <p class="close__action">
+        AI is the cheapest way I have ever found to make sure the answer is <strong>yes.</strong><br>
+        Tonight — page four, page five. Ten minutes. <strong>The first ten of the next two years.</strong>
+      </p>
+    </div>
+
+    <div class="close__bottom">
+      <div class="close__signoff">— Pascal</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

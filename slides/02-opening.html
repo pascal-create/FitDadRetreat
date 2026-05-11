@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 02 — Opening scene</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-opening {
+    background:
+      radial-gradient(ellipse 60% 40% at 75% 90%, rgba(201,169,110,0.12), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,0,0,0.5), transparent 70%),
+      var(--bg);
+  }
+
+  .opening__inner {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .opening__line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 124px;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    max-width: 1500px;
+    z-index: 3;
+    position: relative;
+  }
+
+  .opening__line .accent {
+    color: var(--gold);
+  }
+
+  .opening__rule {
+    width: 96px;
+    height: 1px;
+    background: var(--rule-gold);
+    margin-bottom: 36px;
+    z-index: 3;
+    position: relative;
+  }
+
+  /* Subtle vertical glow suggesting late-night laptop screen on a darkened room */
+  .opening__glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,169,110,0.05), transparent 60%);
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-opening">
+  <div class="opening__glow"></div>
+  <div class="vignette"></div>
+
+  <div class="slide__inner opening__inner">
+    <hr class="opening__rule">
+    <p class="opening__line">
+      Time felt cramped,<br>
+      overbooked, <span class="accent">and expensive.</span>
+    </p>
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act I — The Breaking Point</span>
+    <span>02 / 35</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 34 — Thank you</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-tx {
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 100%, rgba(201,169,110,0.14), transparent 65%),
+      radial-gradient(ellipse 50% 40% at 50% 0%, rgba(201,169,110,0.04), transparent 70%),
+      var(--bg);
+  }
+  .slide-tx .slide__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tx__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 320px;
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    color: var(--ink-strong);
+    margin-bottom: 56px;
+  }
+  .tx__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .tx__rule {
+    width: 96px;
+    height: 1px;
+    background: var(--rule-gold);
+    border: 0;
+    margin-bottom: 56px;
+  }
+
+  /* QR block centered */
+  .tx__qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .tx__qr {
+    width: 280px;
+    height: 280px;
+    background: #FFFEFA;
+    border: 1px solid rgba(201,169,110,0.4);
+    box-shadow: var(--shadow-elev-3);
+    padding: 18px;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .tx__qr .px {
+    background: #0E0E0E;
+  }
+  .tx__qr .px-empty {
+    background: transparent;
+  }
+
+  .tx__qr-label {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .tx__qr-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-size: 22px;
+    color: var(--ink-muted);
+    margin-top: -12px;
+  }
+  .tx__qr-sub em { color: var(--gold); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="slide slide-tx">
+  <div class="slide__inner">
+
+    <h1 class="tx__h">Thank <em>you.</em></h1>
+
+    <hr class="tx__rule">
+
+    <div class="tx__qr-wrap">
+      <span class="tx__qr-label">Scan for the booklet</span>
+      <div class="tx__qr" id="qr"></div>
+      <p class="tx__qr-sub">Booklet · prompts · my <em>master prompt</em></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Stylized QR placeholder — drop the real PNG/SVG into assets/ and swap to <img> when ready.
+  (function() {
+    const qr = document.getElementById('qr');
+    const N = 21, total = N * N;
+    let s = 472901;
+    const rand = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+
+    // Three corner finder squares (top-left, top-right, bottom-left), 7x7
+    function isFinder(r, c) {
+      const inSquare = (r0,c0) => r >= r0 && r < r0+7 && c >= c0 && c < c0+7;
+      return inSquare(0,0) || inSquare(0, N-7) || inSquare(N-7, 0);
+    }
+    function finderFill(r, c) {
+      const inSquare = (r0,c0) => {
+        if (!(r >= r0 && r < r0+7 && c >= c0 && c < c0+7)) return null;
+        const lr = r - r0, lc = c - c0;
+        const isEdge = (lr === 0 || lr === 6 || lc === 0 || lc === 6);
+        const isCenter = (lr >= 2 && lr <= 4 && lc >= 2 && lc <= 4);
+        return isEdge || isCenter;
+      };
+      return finderFill_helper(inSquare, [0,0]) ?? finderFill_helper(inSquare, [0,N-7]) ?? finderFill_helper(inSquare, [N-7,0]);
+    }
+    function finderFill_helper(inSquare, pos) { return inSquare(pos[0], pos[1]); }
+
+    for (let r = 0; r < N; r++) {
+      for (let c = 0; c < N; c++) {
+        const cell = document.createElement('div');
+        if (isFinder(r, c)) {
+          cell.className = finderFill(r, c) ? 'px' : 'px-empty';
+        } else {
+          cell.className = rand() > 0.5 ? 'px' : 'px-empty';
+        }
+        qr.appendChild(cell);
+      }
+    }
+  })();
+</script>
+</body>
+</html>

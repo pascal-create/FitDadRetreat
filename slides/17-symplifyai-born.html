@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 17 — Symplifyai is born</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-born {
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201,169,110,0.08), transparent 70%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .slide-born .slide__inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 32px;
+    z-index: 3;
+    position: relative;
+  }
+
+  .born__head h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 110px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+  }
+  .born__head h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .born__head .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .born__head .label::before {
+    content: ""; width: 56px; height: 1px; background: var(--rule-gold);
+  }
+
+  /* Two companies: Mistral + Symplifyai */
+  .born__companies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: stretch;
+  }
+
+  .born__co {
+    border-top: 1px solid var(--rule-gold);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .born__co-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .born__co-meta .name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 84px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink-strong);
+  }
+  .born__co--new .born__co-meta .name {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .born__co-meta .when {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .born__co--new .born__co-meta .when {
+    color: var(--gold);
+  }
+
+  .born__co-tag {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+  .born__co-tag em {
+    color: var(--ink-strong);
+    font-style: italic;
+  }
+
+  .born__co-list {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .born__co-list .li {
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: var(--ink-muted);
+    line-height: 1.45;
+    padding-left: 20px;
+    position: relative;
+  }
+  .born__co-list .li::before {
+    content: "—";
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+  }
+
+  .born__plus {
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 30px;
+    color: var(--ink-muted);
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .born__plus em { color: var(--gold); }
+  .born__plus strong {
+    color: var(--ink-strong);
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-born">
+  <div class="slide__inner">
+
+    <div class="born__head">
+      <span class="label">After the holidays — January 2025</span>
+      <h2>I built a brand-new company.<br><em>Mistral is still Mistral.</em></h2>
+    </div>
+
+    <div class="born__companies">
+
+      <div class="born__co">
+        <div class="born__co-meta">
+          <span class="name">Mistral</span>
+          <span class="when">Repreneur · 2021</span>
+        </div>
+        <p class="born__co-tag">A brand agency. <em>Strategy + design that converts.</em></p>
+        <div class="born__co-list">
+          <span class="li">Three humans — me, brand strategist, designer</span>
+          <span class="li">Powered by the agents Symplifyai builds for us</span>
+          <span class="li">Healthier than it has ever been</span>
+        </div>
+      </div>
+
+      <div class="born__co born__co--new">
+        <div class="born__co-meta">
+          <span class="name">Symplifyai</span>
+          <span class="when">Founded · January 2025</span>
+        </div>
+        <p class="born__co-tag">An AI integration agency. <em>Born from the rebuild.</em></p>
+        <div class="born__co-list">
+          <span class="li">First job — rebuild the inside of Mistral</span>
+          <span class="li">Second job — do the same for every other entrepreneur</span>
+          <span class="li">+ Symplifyai Academy — launched Aug 2025 — to teach</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="born__plus">
+      Two companies. <em>One mission</em> — give entrepreneurs back the life they actually want.
+    </p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act II — The Story</span>
+    <span>17 / 35</span>
+  </div>
+</div>
+</body>
+</html>

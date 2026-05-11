@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 05 — The old equation</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-eq {
+    background: var(--bg);
+  }
+  .slide-eq .slide__inner {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .eq__label {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+  .eq__label .rule {
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+  .eq__label span {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .eq__line {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 188px;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink-strong);
+  }
+
+  .eq__line em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .eq__line .equals {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 300;
+    font-variation-settings: normal;
+    margin: 0 32px;
+  }
+
+  .eq__sub {
+    margin-top: 56px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 96, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    color: var(--ink-muted);
+    max-width: 1200px;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-eq">
+  <div class="slide__inner">
+
+    <div class="eq__label">
+      <span class="rule"></span>
+      <span>The old equation</span>
+    </div>
+
+    <h1 class="eq__line">More results <span class="equals">=</span><br>more <em>of your life.</em></h1>
+
+    <p class="eq__sub">It's the deal we signed up for. Most of us were proud of it. <em>I was.</em></p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>Act I — The Breaking Point</span>
+    <span>05 / 35</span>
+  </div>
+</div>
+</body>
+</html>

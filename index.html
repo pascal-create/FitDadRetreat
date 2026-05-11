@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>More Human. — FitDad Keynote · Pascal DeGrâce</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: #060606;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #F8F4ED;
+  }
+
+  /* The slide stage — keeps 16:9 and centers the iframe */
+  .stage {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #060606;
+  }
+
+  .frame {
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: min(100vh, calc(100vw * 9 / 16));
+    background: #0E0E0E;
+    border: 0;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    position: relative;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    transition: opacity 0.18s ease;
+  }
+  iframe.loading { opacity: 0; }
+
+  /* HUD overlay — only visible when mouse moves */
+  .hud {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 18px;
+    background: rgba(14, 14, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 237, 0.7);
+    z-index: 10;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+  body.show-hud .hud { opacity: 1; pointer-events: auto; }
+
+  .hud .btn {
+    background: transparent;
+    border: 1px solid rgba(248, 244, 237, 0.2);
+    border-radius: 999px;
+    color: inherit;
+    padding: 5px 14px;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+    outline: none;
+    transition:
+      transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity   200ms cubic-bezier(0.2, 0.7, 0.1, 1),
+      border-color 200ms cubic-bezier(0.2, 0.7, 0.1, 1),
+      color        200ms cubic-bezier(0.2, 0.7, 0.1, 1),
+      box-shadow   200ms cubic-bezier(0.2, 0.7, 0.1, 1);
+  }
+  .hud .btn:hover {
+    border-color: #C9A96E;
+    color: #C9A96E;
+    transform: translateY(-1px);
+  }
+  .hud .btn:focus-visible {
+    border-color: #C9A96E;
+    color: #C9A96E;
+    box-shadow:
+      0 0 0 1px rgba(201, 169, 110, 0.45),
+      0 0 0 4px rgba(201, 169, 110, 0.18);
+  }
+  .hud .btn:active {
+    transform: translateY(0) scale(0.97);
+    opacity: 0.85;
+    border-color: #E0C285;
+    color: #E0C285;
+  }
+
+  .hud .counter {
+    color: #C9A96E;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hud .title {
+    color: rgba(248,244,237,0.55);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+  }
+
+  /* Section indicator strip on top edge */
+  .acts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    display: flex;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  body.show-hud .acts { opacity: 1; }
+
+  .acts__seg {
+    height: 100%;
+    transition: background 0.3s ease;
+  }
+  .acts__seg.active { background: #C9A96E; }
+  .acts__seg.done { background: rgba(201, 169, 110, 0.4); }
+  .acts__seg.future { background: rgba(248, 244, 237, 0.08); }
+
+  /* Help overlay shown briefly on first load */
+  .help {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+  }
+  .help.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .help__inner {
+    text-align: center;
+    color: #F8F4ED;
+  }
+  .help__title {
+    font-family: 'Times', serif;
+    font-style: italic;
+    font-size: 56px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .help__title em {
+    color: #C9A96E;
+  }
+  .help__keys {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .help__key {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(248,244,237,0.6);
+  }
+  .help__key-icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(201, 169, 110, 0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #C9A96E;
+  }
+  .help__hint {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(248,244,237,0.4);
+  }
+
+</style>
+</head>
+<body class="show-hud">
+
+  <div class="acts" id="acts"></div>
+
+  <div class="stage">
+    <div class="frame">
+      <iframe id="slide" src="slides/01-title.html" title="Slide"></iframe>
+    </div>
+  </div>
+
+  <div class="hud">
+    <button class="btn" id="prev" aria-label="Previous">←</button>
+    <span class="counter"><span id="cur">01</span> / 35</span>
+    <span class="title" id="act">Act I</span>
+    <button class="btn" id="full" aria-label="Fullscreen">⤢ Full</button>
+    <button class="btn" id="next" aria-label="Next">→</button>
+  </div>
+
+  <div class="help" id="help">
+    <div class="help__inner">
+      <h1 class="help__title">More <em>Human.</em></h1>
+      <div class="help__keys">
+        <div class="help__key"><span class="help__key-icon">←</span><span>Previous</span></div>
+        <div class="help__key"><span class="help__key-icon">→</span><span>Next</span></div>
+        <div class="help__key"><span class="help__key-icon">F</span><span>Fullscreen</span></div>
+        <div class="help__key"><span class="help__key-icon">G</span><span>Go to slide</span></div>
+        <div class="help__key"><span class="help__key-icon">Esc</span><span>Exit FS</span></div>
+      </div>
+      <p class="help__hint">Click anywhere to begin</p>
+    </div>
+  </div>
+
+<script>
+const SLIDES = [
+  { file: '01-title.html',             act: 'Title' },
+  { file: '02-opening.html',           act: 'Act I — The Breaking Point' },
+  { file: '03-provocations.html',      act: 'Act I — The Breaking Point' },
+  { file: '04-paincalc.html',          act: 'Act I — The Breaking Point' },
+  { file: '05-equation.html',          act: 'Act I — The Breaking Point' },
+  { file: '06-thesis.html',            act: 'Act I — The Breaking Point' },
+  { file: '07-tony-quote.html',        act: 'Act I — The Breaking Point' },
+  { file: '08-matt.html',              act: 'Act I — The Breaking Point' },
+  { file: '09-memories2go.html',       act: 'Act II — The Story' },
+  { file: '10-mypropertytour.html',    act: 'Act II — The Story' },
+  { file: '11-mistral-repreneur.html', act: 'Act II — The Story' },
+  { file: '12-loneliness.html',        act: 'Act II — The Story' },
+  { file: '13-book-gusto.html',        act: 'Act II — The Story' },
+  { file: '14-oct17.html',             act: 'Act II — The Story' },
+  { file: '15-fireday.html',           act: 'Act II — The Story' },
+  { file: '16-tony-arena.html',        act: 'Act II — The Story' },
+  { file: '17-symplifyai-born.html',   act: 'Act II — The Story' },
+  { file: '18-stack.html',             act: 'Act II — The Story' },
+  { file: '19-receipts.html',          act: 'Act II — The Story' },
+  { file: '20-tuesday-2024.html',      act: 'Act II — The Story' },
+  { file: '21-tuesday-2026.html',      act: 'Act II — The Story' },
+  { file: '22-family.html',            act: 'Act II — The Story' },
+  { file: '23-the-line.html',          act: 'Act II — The Story' },
+  { file: '24-hire-trap.html',         act: 'Bridge — The Buyback Loop' },
+  { file: '25-dan-martell.html',       act: 'Bridge — The Buyback Loop' },
+  { file: '26-buyback-loop.html',      act: 'Bridge — The Buyback Loop' },
+  { file: '27-junior-hire.html',       act: 'Bridge — The Buyback Loop' },
+  { file: '28-belief.html',            act: 'Act III — The Handoff' },
+  { file: '29-ruthless-mentor.html',   act: 'Act III — The Handoff' },
+  { file: '30-demo.html',              act: 'Act III — The Handoff' },
+  { file: '31-master-prompt.html',     act: 'Act III — The Handoff' },
+  { file: '32-audit-prompt.html',      act: 'Act III — The Handoff' },
+  { file: '33-close.html',             act: 'Act III — The Handoff' },
+  { file: '34-thanks.html',            act: 'End' },
+  { file: '35-blackslide.html',        act: 'Q & A' }
+];
+
+const $iframe  = document.getElementById('slide');
+const $cur     = document.getElementById('cur');
+const $act     = document.getElementById('act');
+const $help    = document.getElementById('help');
+const $body    = document.body;
+const $acts    = document.getElementById('acts');
+
+// Build the act-strip
+SLIDES.forEach(() => {
+  const seg = document.createElement('div');
+  seg.className = 'acts__seg future';
+  seg.style.flex = '1';
+  $acts.appendChild(seg);
+});
+const $segs = $acts.querySelectorAll('.acts__seg');
+
+let index = 0;
+let hudTimer;
+
+function pad(n) { return String(n + 1).padStart(2, '0'); }
+
+function go(i) {
+  if (i < 0 || i >= SLIDES.length) return;
+  index = i;
+  $iframe.classList.add('loading');
+  $iframe.src = 'slides/' + SLIDES[i].file;
+  $iframe.onload = () => $iframe.classList.remove('loading');
+  $cur.textContent = pad(i);
+  $act.textContent = SLIDES[i].act;
+  // Update segs
+  $segs.forEach((s, j) => {
+    s.classList.remove('active','done','future');
+    if (j < i) s.classList.add('done');
+    else if (j === i) s.classList.add('active');
+    else s.classList.add('future');
+  });
+  // Persist
+  try { localStorage.setItem('mh.slide', i); } catch(e) {}
+}
+
+function next() { go(Math.min(index + 1, SLIDES.length - 1)); }
+function prev() { go(Math.max(index - 1, 0)); }
+
+function showHud() {
+  $body.classList.add('show-hud');
+  clearTimeout(hudTimer);
+  hudTimer = setTimeout(() => $body.classList.remove('show-hud'), 2200);
+}
+
+document.addEventListener('mousemove', showHud);
+document.addEventListener('click', e => {
+  // Only hide help if visible
+  if (!$help.classList.contains('hidden')) {
+    $help.classList.add('hidden');
+    return;
+  }
+  showHud();
+});
+
+document.getElementById('prev').addEventListener('click', e => { e.stopPropagation(); prev(); });
+document.getElementById('next').addEventListener('click', e => { e.stopPropagation(); next(); });
+document.getElementById('full').addEventListener('click', e => {
+  e.stopPropagation();
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+});
+
+document.addEventListener('keydown', e => {
+  // Hide help on any key
+  if (!$help.classList.contains('hidden')) $help.classList.add('hidden');
+
+  switch (e.key) {
+    case 'ArrowRight':
+    case ' ':
+    case 'PageDown':
+      e.preventDefault(); next(); showHud(); break;
+    case 'ArrowLeft':
+    case 'PageUp':
+      e.preventDefault(); prev(); showHud(); break;
+    case 'Home':
+      e.preventDefault(); go(0); showHud(); break;
+    case 'End':
+      e.preventDefault(); go(SLIDES.length - 1); showHud(); break;
+    case 'f': case 'F':
+      e.preventDefault();
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+      break;
+    case 'g': case 'G':
+      e.preventDefault();
+      const t = prompt('Go to slide # (1–' + SLIDES.length + ')');
+      if (t) {
+        const n = parseInt(t, 10);
+        if (n >= 1 && n <= SLIDES.length) go(n - 1);
+      }
+      showHud();
+      break;
+  }
+});
+
+// Restore from previous session
+try {
+  const saved = parseInt(localStorage.getItem('mh.slide'), 10);
+  if (!isNaN(saved) && saved >= 0 && saved < SLIDES.length) go(saved);
+  else go(0);
+} catch(e) { go(0); }
+
+// Auto-hide HUD after 2.5s
+setTimeout(() => $body.classList.remove('show-hud'), 2500);
+</script>
+</body>
+</html>
