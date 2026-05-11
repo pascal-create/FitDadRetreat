@@ -21,20 +21,26 @@
     align-items: center;
     justify-content: center;
     background: #060606;
+    overflow: hidden;
   }
 
+  /* Slide canvas is native 1920×1080 and CSS-scaled to fit the viewport.
+     Keeps fidelity 1:1 with the design — no manual browser zoom needed. */
   .frame {
-    width: min(100vw, calc(100vh * 16 / 9));
-    height: min(100vh, calc(100vw * 9 / 16));
+    width: 1920px;
+    height: 1080px;
     background: #0E0E0E;
     border: 0;
     box-shadow: 0 24px 80px rgba(0,0,0,0.6);
     position: relative;
+    transform-origin: center center;
+    transform: scale(var(--fit, 1));
+    flex: 0 0 auto;
   }
 
   iframe {
-    width: 100%;
-    height: 100%;
+    width: 1920px;
+    height: 1080px;
     border: 0;
     display: block;
     transition: opacity 0.18s ease;
@@ -276,6 +282,16 @@ const SLIDES = [
   { file: '34-thanks.html',            act: 'End' },
   { file: '35-blackslide.html',        act: 'Q & A' }
 ];
+
+// Auto-fit: scale the 1920×1080 stage canvas to whatever viewport we're in.
+// No manual browser zoom needed.
+function fitStage() {
+  const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+  document.documentElement.style.setProperty('--fit', s);
+}
+window.addEventListener('resize', fitStage);
+window.addEventListener('orientationchange', fitStage);
+fitStage();
 
 const $iframe  = document.getElementById('slide');
 const $cur     = document.getElementById('cur');
