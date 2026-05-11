@@ -270,18 +270,15 @@ img { max-width: 100%; display: block; }
   left: var(--gutter);
   right: var(--gutter);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--ink-faint);
-  z-index: 4;
-}
-.slide__chrome span:nth-child(2) {
   color: var(--gold);
+  z-index: 4;
 }
 
 /* ---------- Utilities ---------- */

@@ -64,24 +64,29 @@
   }
   .date__big .day {
     display: block;
-    font-size: 280px;
+    font-size: 168px;
     color: var(--gold);
     font-style: italic;
     font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    line-height: 0.95;
   }
-  .date__big .month {
-    display: block;
-    font-size: 80px;
-    color: var(--ink);
-    margin-top: -32px;
-    letter-spacing: -0.03em;
+  .date__big .day .ord {
+    font-size: 0.32em;
+    font-style: italic;
+    vertical-align: super;
+    margin-left: 4px;
+    color: var(--gold-bright);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
   }
   .date__big .year {
     display: block;
-    font-size: 64px;
+    font-size: 88px;
     color: var(--ink-muted);
     font-style: italic;
     margin-top: 16px;
+    letter-spacing: -0.02em;
   }
 
   .date__story h2 {
@@ -133,8 +138,7 @@
 
     <div class="date__body">
       <div class="date__big">
-        <span class="day">17</span>
-        <span class="month">October</span>
+        <span class="day">Oct 17<sup class="ord">th</sup></span>
         <span class="year">2024</span>
       </div>
       <div class="date__story">
@@ -151,7 +155,6 @@
   </div>
 
   <div class="slide__chrome">
-    <span>Act II — The Story</span>
     <span>14 / 35</span>
   </div>
 </div>
