@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Slide 27 — The cheapest junior hire</title>
+<title>Slide 28 — Do not hire before you automate</title>
 <link rel="stylesheet" href="../styles/design-system.css">
 <style>
   .slide-jh {
@@ -13,13 +13,15 @@
   .slide-jh .slide__inner {
     justify-content: center;
     align-items: flex-start;
+    display: flex;
+    flex-direction: column;
   }
 
   .jh__label {
     display: flex;
     align-items: center;
     gap: 28px;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
   .jh__label .rule { width: 56px; height: 1px; background: var(--rule-gold); }
   .jh__label span {
@@ -40,7 +42,7 @@
     letter-spacing: -0.03em;
     color: var(--ink-strong);
     max-width: 1700px;
-    margin-bottom: 56px;
+    margin-bottom: 28px;
   }
   .jh__line em {
     font-style: italic;
@@ -48,38 +50,55 @@
     font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
   }
 
-  .jh__perks {
+  .jh__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--ink-muted);
+    max-width: 1500px;
+    margin-bottom: 64px;
+  }
+  .jh__sub em { color: var(--gold); font-style: italic; }
+  .jh__sub strong { color: var(--ink); font-weight: 400; }
+
+  .jh__steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 28px;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1700px;
   }
-  .jh__perk {
+  .jh__step {
     border-top: 1px solid var(--rule-gold);
-    padding-top: 20px;
+    padding-top: 22px;
   }
-  .jh__perk .num {
+  .jh__step .num {
     font-family: var(--font-display);
     font-weight: 400;
     font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
-    font-size: 56px;
+    font-size: 60px;
     color: var(--gold);
     line-height: 1;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     font-variant-numeric: lining-nums tabular-nums;
     letter-spacing: -0.02em;
   }
-  .jh__perk .label {
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--ink);
+  .jh__step .label {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 28px;
+    line-height: 1.15;
+    color: var(--ink-strong);
+    letter-spacing: -0.015em;
   }
-  .jh__perk .label em {
+  .jh__step .label em {
     color: var(--gold);
     font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
   }
 </style>
 </head>
@@ -89,37 +108,41 @@
 
     <div class="jh__label">
       <span class="rule"></span>
-      <span>The bridge to the tools</span>
+      <span>The rule before the tools</span>
     </div>
 
     <h2 class="jh__line">
-      AI is the cheapest, fastest<br>
-      <em>"junior hire"</em> I've ever made.
+      Do not hire<br>
+      before you <em>automate.</em>
     </h2>
 
-    <div class="jh__perks">
-      <div class="jh__perk">
+    <p class="jh__sub">
+      Hiring should not be the first answer to every operational problem.
+    </p>
+
+    <div class="jh__steps">
+      <div class="jh__step">
         <div class="num">01</div>
-        <div class="label">Works <em>24 hours</em> a day.</div>
+        <div class="label">Find the <em>bottleneck.</em></div>
       </div>
-      <div class="jh__perk">
+      <div class="jh__step">
         <div class="num">02</div>
-        <div class="label"><em>Never</em> asks for a raise.</div>
+        <div class="label">Map the <em>workflow.</em></div>
       </div>
-      <div class="jh__perk">
+      <div class="jh__step">
         <div class="num">03</div>
-        <div class="label"><em>Doesn't quit.</em> Doesn't take it personally.</div>
+        <div class="label">Use <em>AI</em> where the work is repetitive.</div>
       </div>
-      <div class="jh__perk">
+      <div class="jh__step">
         <div class="num">04</div>
-        <div class="label">Costs <em>less than my coffee budget.</em></div>
+        <div class="label">Hire only when <em>human judgment</em> is essential.</div>
       </div>
     </div>
 
   </div>
 
   <div class="slide__chrome">
-    <span>27 / 35</span>
+    <span>28 / 36</span>
   </div>
 </div>
 </body>
