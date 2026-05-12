@@ -118,7 +118,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     background: #0A0A0A;
   }
@@ -181,7 +181,7 @@
         ></video>
         <div class="agent__caption">
           <div class="who">Prospect</div>
-          <div class="role">Recorded run · 1.5×</div>
+          <div class="role">Recorded run</div>
         </div>
       </div>
 
@@ -198,16 +198,13 @@
   (function() {
     const v = document.querySelector('.agent-video');
     if (!v) return;
-    const setRate = () => { v.playbackRate = 1.5; };
     const tryPlay = () => {
       v.muted = true;
       const p = v.play();
       if (p && typeof p.catch === 'function') p.catch(() => {});
     };
-    v.addEventListener('loadedmetadata', () => { setRate(); tryPlay(); });
-    v.addEventListener('canplay', () => { setRate(); tryPlay(); });
-    v.addEventListener('play', setRate);
-    setRate();
+    v.addEventListener('loadedmetadata', tryPlay);
+    v.addEventListener('canplay', tryPlay);
     tryPlay();
   })();
 </script>
