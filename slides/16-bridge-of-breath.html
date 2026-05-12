@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 16 — I needed someone to tell me what came next</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-breath {
+    background: #000;
+  }
+  /* Disable global film-grain on this slide */
+  .slide-breath.slide::after { display: none; }
+
+  .slide-breath .slide__inner {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .breath__line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 56px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    /* Fog Grey — muted, not white */
+    color: rgba(248, 244, 237, 0.50);
+    max-width: 1400px;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-breath">
+  <div class="slide__inner">
+    <p class="breath__line">I needed someone to tell me what came next.</p>
+  </div>
+</div>
+</body>
+</html>
