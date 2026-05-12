@@ -193,9 +193,11 @@
         <video
           id="demoVideo"
           src="../assets/videos/discovery-agent-demo.mp4"
-          controls
+          autoplay
+          muted
           playsinline
-          preload="metadata"
+          controls
+          preload="auto"
           poster=""
         ></video>
         <div class="demo__caption">
@@ -214,15 +216,22 @@
 </div>
 
 <script>
-  // Default the demo video to 1.5× playback and stop it cleanly at 1:11.
+  // Autoplay (muted), 1.5× speed, stop cleanly at 1:11.
   (function() {
     const v = document.getElementById('demoVideo');
     if (!v) return;
     const END_AT = 71; // seconds — clip ends at 1:11
     const setRate = () => { v.playbackRate = 1.5; };
-    v.addEventListener('loadedmetadata', setRate);
+    const tryPlay = () => {
+      v.muted = true;
+      const p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    v.addEventListener('loadedmetadata', () => { setRate(); tryPlay(); });
+    v.addEventListener('canplay', () => { setRate(); tryPlay(); });
     v.addEventListener('play', setRate);
     setRate();
+    tryPlay();
     v.addEventListener('timeupdate', () => {
       if (v.currentTime >= END_AT && !v.paused) {
         v.pause();
