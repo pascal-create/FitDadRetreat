@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 31 — Master Prompt</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-mp { background: var(--bg); }
+  .slide-mp .slide__inner { display: grid; grid-template-rows: auto auto 1fr auto; gap: 24px; }
+
+  .mp__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .mp__head .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .mp__head .ref {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-muted);
+  }
+
+  .mp__title-row {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: end;
+  }
+  .mp__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 80px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+  }
+  .mp__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .mp__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink-muted);
+  }
+  .mp__sub em { color: var(--gold); }
+
+  /* Code block — readable, monospace */
+  .mp__code {
+    background:
+      linear-gradient(180deg, rgba(201,169,110,0.04), transparent 80%),
+      #08070A;
+    border: 1px solid var(--rule-gold);
+    padding: 32px 36px;
+    position: relative;
+    box-shadow: var(--shadow-elev-3);
+    font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #FFFEFA;
+    overflow: hidden;
+  }
+  .mp__code-tab {
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background: var(--bg);
+    padding: 0 16px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .mp__code .role {
+    color: var(--gold-bright);
+    font-weight: 700;
+  }
+  .mp__code .key {
+    color: var(--ink-strong);
+    font-weight: 600;
+  }
+  .mp__code p {
+    margin-bottom: 8px;
+  }
+  .mp__code ul {
+    list-style: none;
+    margin: 4px 0 8px 0;
+    padding-left: 18px;
+  }
+  .mp__code ul li {
+    position: relative;
+    padding-left: 14px;
+  }
+  .mp__code ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .mp__close {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    font-size: 26px;
+    color: var(--ink);
+  }
+  .mp__close em { color: var(--gold); }
+  .mp__close strong {
+    color: var(--ink-strong);
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-mp">
+  <div class="slide__inner">
+
+    <div class="mp__head">
+      <span class="label">Your turn — booklet pages 5 to 8</span>
+      <span class="ref">Ten minutes · before bed tonight</span>
+    </div>
+
+    <div class="mp__title-row">
+      <h2 class="mp__h">The <em>Master Prompt.</em></h2>
+      <p class="mp__sub">Paste this into ChatGPT, Claude, or Gemini. Answer the questions. <em>You'll walk away with your AI ID card.</em></p>
+    </div>
+
+    <div class="mp__code">
+      <span class="mp__code-tab">Paste · run · interview yourself</span>
+
+      <p><span class="role">You are an expert architect in MasterPrompt.</span></p>
+      <p>Your mission is to interview me to create a complete, clear, fully customized MasterPrompt that I can use to give any AI a deep understanding of who I am and what I need.</p>
+
+      <p><span class="key">Instructions:</span></p>
+      <ul>
+        <li>Conduct a structured interview by asking <span class="key">12 to 15 questions, one at a time.</span></li>
+        <li>Wait for my full answer before asking the next question.</li>
+      </ul>
+
+      <p><span class="key">Cover, in detail:</span> who I am · my role &amp; responsibilities · my company · my audience &amp; clients · my goals (6–12 months) · my current challenges, frustrations &amp; obstacles · my communication style · the tasks &amp; content I create · the tools I use · how I want AI to help me.</p>
+
+      <p><span class="key">When the interview is done,</span> use my answers to generate a final MasterPrompt — clear, structured, professional, optimized for any AI to understand me quickly, easy to copy &amp; paste, organized into sections with titles and subtitles.</p>
+
+      <p>Goal: produce an immersive, accurate, personalized MasterPrompt that becomes my <span class="key">"AI ID card"</span> and radically improves every future interaction I have with AI.</p>
+    </div>
+
+    <p class="mp__close">Then say: <em>"Save this to memory and refer to it for every future conversation."</em> <strong>That's it.</strong></p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>40 / 46</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 23 — Three more agents</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-more {
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,169,110,0.06), transparent 70%),
+      var(--bg);
+  }
+  .slide-more .slide__inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 40px;
+  }
+
+  .more__head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .more__head h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 96px;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+  }
+  .more__head h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .more__head .lbl {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .more__head .lbl::before {
+    content: ""; width: 56px; height: 1px; background: var(--rule-gold);
+  }
+  .more__head-r {
+    text-align: right;
+    max-width: 520px;
+    padding-bottom: 8px;
+  }
+  .more__head-r p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink-muted);
+  }
+  .more__head-r p em { color: var(--gold); }
+
+  .more__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+  }
+  .more__card {
+    background:
+      linear-gradient(180deg, rgba(201,169,110,0.06), rgba(201,169,110,0.01)),
+      var(--bg);
+    border: 1px solid rgba(201,169,110,0.32);
+    padding: 32px 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-elev-1);
+  }
+  .more__card .num {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+    font-size: 38px;
+    line-height: 1;
+    color: var(--gold-bright);
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .more__card .name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-variation-settings: "opsz" 60, "SOFT" 30;
+    font-size: 42px;
+    line-height: 1.05;
+    color: var(--ink-strong);
+    letter-spacing: -0.015em;
+    margin-top: 4px;
+  }
+  .more__card .name em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .more__card .tag {
+    margin-top: 2px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .more__card .role {
+    margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+  .more__card .role strong { color: var(--ink); font-weight: 600; }
+  .more__card .role em { color: var(--gold); font-style: italic; }
+
+  .more__foot {
+    text-align: center;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    font-size: 26px;
+    color: var(--ink);
+  }
+  .more__foot em { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="slide slide-more">
+  <div class="slide__inner">
+
+    <div class="more__head">
+      <div>
+        <span class="lbl">The other three custom agents</span>
+        <h2>Three more — <em>running quietly.</em></h2>
+      </div>
+      <div class="more__head-r">
+        <p>Same idea as Prospect, Deep Research, and Discovery — built once, <em>working every day.</em></p>
+      </div>
+    </div>
+
+    <div class="more__grid">
+      <div class="more__card">
+        <span class="num">04</span>
+        <span class="name">RFP.</span>
+        <span class="tag">Proposals</span>
+        <p class="role">Reads incoming RFPs. <strong>Drafts the proposal in our house format</strong> — voice, structure, pricing notes — before I've finished my coffee.</p>
+      </div>
+      <div class="more__card">
+        <span class="num">05</span>
+        <span class="name">Legal Assistant.</span>
+        <span class="tag">Agreement crafter</span>
+        <p class="role">NDAs, SOWs, client agreements. <strong>Drafted in our voice,</strong> reviewed before signature. The lawyer reviews the edges, not the boilerplate.</p>
+      </div>
+      <div class="more__card">
+        <span class="num">06</span>
+        <span class="name">Project Manager.</span>
+        <span class="tag">Notion sync</span>
+        <p class="role">Listens on every call. Syncs decisions and tasks <strong>directly into Notion.</strong> <em>Nothing falls through.</em></p>
+      </div>
+    </div>
+
+    <p class="more__foot">Six agents. <em>One small team.</em> A company that runs while we sleep.</p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>23 / 46</span>
+  </div>
+</div>
+</body>
+</html>

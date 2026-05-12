@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 40 — Tonight. Ten minutes.</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-tonight {
+    background: #000;
+  }
+  /* Disable the global film-grain on this slide for pure black */
+  .slide-tonight.slide::after { display: none; }
+
+  .slide-tonight .slide__inner {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .tonight__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 168px;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: #FFFEFA;
+  }
+  .tonight__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .tonight__instructions {
+    font-family: var(--font-body);
+    font-size: 28px;
+    line-height: 1.65;
+    color: rgba(248, 244, 237, 0.62);
+    max-width: 1200px;
+    font-weight: 400;
+  }
+  .tonight__instructions .quote {
+    color: #FFFEFA;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    display: inline-block;
+    margin: 4px 0;
+    padding: 2px 0;
+  }
+  .tonight__instructions .start {
+    display: block;
+    margin-top: 28px;
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 96, "SOFT" 80, "WONK" 1;
+    font-size: 32px;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-tonight">
+  <div class="slide__inner">
+
+    <h1 class="tonight__h">
+      Tonight. Ten <em>minutes.</em><br>
+      Before you sleep.
+    </h1>
+
+    <p class="tonight__instructions">
+      Open ChatGPT. Type one sentence:<br>
+      <span class="quote">"Be my ruthless mentor. Stress-test my business."</span><br>
+      <span class="start">That's it. That's the start.</span>
+    </p>
+
+  </div>
+</div>
+</body>
+</html>

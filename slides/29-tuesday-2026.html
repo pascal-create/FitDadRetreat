@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 21 — Tuesday 2026</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-day {
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 100%, rgba(201,169,110,0.10), transparent 65%),
+      var(--bg);
+  }
+  .slide-day .slide__inner { display: grid; grid-template-rows: auto 1fr auto; gap: 32px; }
+
+  .day__head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 64px;
+    align-items: end;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .day__year {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    font-size: 220px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--gold);
+  }
+  .day__year .small {
+    display: block;
+    font-size: 0.18em;
+    color: var(--ink-muted);
+    font-style: normal;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .day__title { text-align: right; }
+  .day__title h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 84px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+  }
+  .day__title h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .day__title .sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-muted);
+    margin-top: 12px;
+  }
+
+  .day__schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+  }
+  .day__row {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day__row:last-child { border-bottom: 0; }
+
+  .day__time {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .day__what {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--ink-strong);
+    letter-spacing: -0.015em;
+  }
+  .day__what em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .day__tag {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .day__close {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-gold);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    font-size: 44px;
+    color: var(--ink-strong);
+  }
+  .day__close em { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="slide slide-day">
+  <div class="slide__inner">
+
+    <div class="day__head">
+      <div class="day__year">
+        <span class="small">A day in my life · now</span>
+        2026
+      </div>
+      <div class="day__title">
+        <h2>The <em>human</em> schedule.</h2>
+        <p class="sub">Same hours · different life</p>
+      </div>
+    </div>
+
+    <div class="day__schedule">
+      <div class="day__row">
+        <span class="day__time">6:45 am</span>
+        <span class="day__what">Wake up. <em>No phone for the first hour.</em></span>
+        <span class="day__tag">Quiet start</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">7:00 am</span>
+        <span class="day__what">Breakfast at the kitchen island. <em>Jacob and Isabelle.</em></span>
+        <span class="day__tag">Family</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">7:30 am</span>
+        <span class="day__what">Drive Jacob to school. He tells me about his soccer game.</span>
+        <span class="day__tag">Present</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">8:00 am</span>
+        <span class="day__what">Gym. <em>Every day. Not "when I have time."</em></span>
+        <span class="day__tag">Health</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">9:15 am</span>
+        <span class="day__what">Office. <em>Jace has drafted my emails. Reclaim has planned my day.</em></span>
+        <span class="day__tag">Agents on duty</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">11:30 am</span>
+        <span class="day__what">Discovery call. <em>The questionnaire was already on my reMarkable.</em></span>
+        <span class="day__tag">Zero prep</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">1:00 pm</span>
+        <span class="day__what">Laptop closed. <em>Done for the day.</em></span>
+        <span class="day__tag">Boundary</span>
+      </div>
+      <div class="day__row">
+        <span class="day__time">afternoon</span>
+        <span class="day__what">Hockey practice · bike ride · snowboard · vacation.</span>
+        <span class="day__tag">My life</span>
+      </div>
+    </div>
+
+    <p class="day__close">I use the extra time to be <em>more human.</em></p>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>29 / 46</span>
+  </div>
+</div>
+</body>
+</html>

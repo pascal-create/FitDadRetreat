@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 20 — Agent · Prospect</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-agent { background: var(--bg); }
+  .slide-agent .slide__inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 36px;
+  }
+
+  .agent__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .agent__top .index {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .agent__top .index::before {
+    content: ""; width: 56px; height: 1px; background: var(--rule-gold);
+  }
+  .agent__top .meta {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-muted);
+  }
+
+  .agent__body {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .agent__left {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .agent__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 168px;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+    color: var(--ink-strong);
+  }
+  .agent__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .agent__tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--ink-muted);
+    max-width: 560px;
+  }
+  .agent__tagline em { color: var(--ink); font-style: italic; }
+
+  .agent__bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .agent__bullet {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .agent__bullet::before {
+    content: "—";
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 18px;
+    flex: 0 0 auto;
+  }
+  .agent__bullet strong { color: var(--ink-strong); font-weight: 600; }
+  .agent__bullet em { color: var(--gold); font-style: italic; }
+
+  /* Video frame */
+  .agent__visual {
+    aspect-ratio: 16 / 10;
+    background: #0A0A0A;
+    border: 1px solid var(--rule-gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-elev-3);
+  }
+  .agent__visual video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #0A0A0A;
+  }
+  .agent__caption {
+    position: absolute;
+    bottom: 16px;
+    left: 18px;
+    z-index: 2;
+    background: rgba(6,6,6,0.78);
+    padding: 10px 16px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+  .agent__caption .who {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 96, "SOFT" 60, "WONK" 1;
+    font-size: 18px;
+    color: var(--ink-strong);
+    line-height: 1;
+  }
+  .agent__caption .role {
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-agent">
+  <div class="slide__inner">
+
+    <div class="agent__top">
+      <span class="index">Custom · 01 / 06 — Sales</span>
+      <span class="meta">Every Monday morning · <em>fresh leads</em></span>
+    </div>
+
+    <div class="agent__body">
+
+      <div class="agent__left">
+        <h2 class="agent__h"><em>Prospect.</em></h2>
+        <p class="agent__tagline">Drops a fresh list of <em>perfect-fit Mistral leads</em> in my inbox every Monday at 7 a.m.</p>
+        <div class="agent__bullets">
+          <p class="agent__bullet">Scans for <strong>businesses in transition</strong> — rebrands, expansions, leadership changes.</p>
+          <p class="agent__bullet">Filters by <strong>region, size, and industry</strong> using our ideal-client profile.</p>
+          <p class="agent__bullet">Hands me a <em>working list</em> — not a thousand names to sift through.</p>
+        </div>
+      </div>
+
+      <div class="agent__visual">
+        <video
+          class="agent-video"
+          src="../assets/videos/agent-prospect.mov"
+          autoplay muted playsinline controls
+          preload="auto"
+        ></video>
+        <div class="agent__caption">
+          <div class="who">Prospect</div>
+          <div class="role">Recorded run · 1.5×</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>20 / 46</span>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const v = document.querySelector('.agent-video');
+    if (!v) return;
+    const setRate = () => { v.playbackRate = 1.5; };
+    const tryPlay = () => {
+      v.muted = true;
+      const p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    v.addEventListener('loadedmetadata', () => { setRate(); tryPlay(); });
+    v.addEventListener('canplay', () => { setRate(); tryPlay(); });
+    v.addEventListener('play', setRate);
+    setRate();
+    tryPlay();
+  })();
+</script>
+</body>
+</html>

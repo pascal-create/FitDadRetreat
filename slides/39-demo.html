@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 30 — Demo</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-demo { background: var(--bg); }
+  .slide-demo .slide__inner { display: grid; grid-template-rows: auto 1fr; gap: 36px; }
+
+  .demo__head {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .demo__head .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--rule-gold);
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .demo__head .pill::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(201,169,110,0.3);
+  }
+  .demo__head .label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .demo__head .rule { flex: 1; height: 1px; background: var(--rule); }
+
+  .demo__body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .demo__h {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 100px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+    margin-bottom: 32px;
+  }
+  .demo__h em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+
+  .demo__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .demo__step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    align-items: baseline;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .demo__step:last-child { border-bottom: 0; }
+  .demo__step-num {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .demo__step-text {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .demo__step-text em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  /* Right: video frame */
+  .demo__visual {
+    aspect-ratio: 16 / 10;
+    background: #0A0A0A;
+    border: 1px solid var(--rule-gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-elev-3);
+  }
+  .demo__visual video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #0A0A0A;
+  }
+  .demo__caption {
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    z-index: 2;
+    background: rgba(6,6,6,0.78);
+    padding: 12px 18px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+  .demo__caption .who {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 96, "SOFT" 60, "WONK" 1;
+    font-size: 22px;
+    color: var(--ink-strong);
+    line-height: 1;
+  }
+  .demo__caption .role {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide-demo">
+  <div class="slide__inner">
+
+    <div class="demo__head">
+      <span class="pill">Live Demo</span>
+      <span class="label">Discovery agent — meeting prep on autopilot</span>
+      <span class="rule"></span>
+      <span class="label">~ 75 seconds</span>
+    </div>
+
+    <div class="demo__body">
+
+      <div>
+        <h2 class="demo__h">Watch what happens when a real meeting <em>hits my calendar.</em></h2>
+
+        <div class="demo__steps">
+          <div class="demo__step">
+            <span class="demo__step-num">01</span>
+            <span class="demo__step-text">A real entrepreneur books a <em>45-minute meeting</em> in my calendar.</span>
+          </div>
+          <div class="demo__step">
+            <span class="demo__step-num">02</span>
+            <span class="demo__step-text">Discovery Agent <em>scrapes everything public</em> about them and their company.</span>
+          </div>
+          <div class="demo__step">
+            <span class="demo__step-num">03</span>
+            <span class="demo__step-text">Writes me a research report — <em>likely pain points, industry shifts, competitor moves.</em></span>
+          </div>
+          <div class="demo__step">
+            <span class="demo__step-num">04</span>
+            <span class="demo__step-text">Emails it to me <em>before the meeting</em> — I walk in already knowing the business.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo__visual">
+        <video
+          id="demoVideo"
+          src="../assets/videos/discovery-agent-demo.mp4"
+          autoplay
+          muted
+          playsinline
+          controls
+          preload="auto"
+          poster=""
+        ></video>
+        <div class="demo__caption">
+          <div class="who">Discovery Agent</div>
+          <div class="role">Real run · 1.5×</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>39 / 46</span>
+  </div>
+</div>
+
+<script>
+  // Autoplay (muted), 1.5× speed, stop cleanly at 1:11.
+  (function() {
+    const v = document.getElementById('demoVideo');
+    if (!v) return;
+    const END_AT = 71; // seconds — clip ends at 1:11
+    const setRate = () => { v.playbackRate = 1.5; };
+    const tryPlay = () => {
+      v.muted = true;
+      const p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    v.addEventListener('loadedmetadata', () => { setRate(); tryPlay(); });
+    v.addEventListener('canplay', () => { setRate(); tryPlay(); });
+    v.addEventListener('play', setRate);
+    setRate();
+    tryPlay();
+    v.addEventListener('timeupdate', () => {
+      if (v.currentTime >= END_AT && !v.paused) {
+        v.pause();
+        v.currentTime = END_AT;
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 26 — The Buyback Loop</title>
+<link rel="stylesheet" href="../styles/design-system.css">
+<style>
+  .slide-loop {
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 50%, rgba(201,169,110,0.07), transparent 70%),
+      var(--bg);
+  }
+  .slide-loop .slide__inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 28px;
+  }
+
+  .loop__head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-gold);
+  }
+  .loop__head-l h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-size: 96px;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: var(--ink-strong);
+  }
+  .loop__head-l h2 em {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  }
+  .loop__head-l .lbl {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+  .loop__head-l .lbl::before {
+    content: "";
+    width: 56px;
+    height: 1px;
+    background: var(--rule-gold);
+  }
+  .loop__head-r {
+    text-align: right;
+    max-width: 480px;
+  }
+  .loop__head-r p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-size: 22px;
+    color: var(--ink-muted);
+    line-height: 1.45;
+  }
+  .loop__head-r p em { color: var(--gold); }
+
+  /* Diagram + steps grid */
+  .loop__body {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  /* The diagram — Dan Martell's actual Buy Back Loop visual */
+  .loop__diagram {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .loop__diagram img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter:
+      drop-shadow(0 24px 48px rgba(0,0,0,0.6))
+      drop-shadow(0 0 24px rgba(201,169,110,0.10));
+  }
+  .loop__diagram-credit {
+    position: absolute;
+    bottom: -6px;
+    right: 8px;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .loop__diagram-credit em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* Step cards on the right */
+  .loop__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 20px 24px;
+    background: rgba(248,244,237,0.025);
+    border-left: 2px solid var(--rule-gold);
+  }
+  .step__n {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 0;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--gold);
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .step__name {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--ink-strong);
+  }
+  .step__sub {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 8px 0 12px 0;
+  }
+  .step__desc {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+  }
+  .step__desc strong { color: var(--ink); font-weight: 600; }
+  .step__desc em { color: var(--gold); font-style: italic; }
+
+  /* Footer credit */
+  .loop__credit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .loop__credit .src { color: var(--ink-faint); }
+  .loop__credit .src strong { color: var(--gold); }
+  .loop__credit .gift {
+    color: var(--ink-muted);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 350;
+    font-size: 17px;
+    text-transform: none;
+    letter-spacing: -0.005em;
+  }
+  .loop__credit .gift em { color: var(--gold); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="slide slide-loop">
+  <div class="slide__inner">
+
+    <div class="loop__head">
+      <div class="loop__head-l">
+        <span class="lbl">Dan Martell's framework</span>
+        <h2>The <em>Buyback Loop.</em></h2>
+      </div>
+      <div class="loop__head-r">
+        <p>Four steps. Run them on every task that's <em>eating</em> your week.</p>
+      </div>
+    </div>
+
+    <div class="loop__body">
+
+      <div class="loop__diagram">
+        <img src="../assets/photos/buyback-loop-clean.png" alt="Dan Martell — The Buy Back Loop">
+        <span class="loop__diagram-credit">Diagram · <em>Dan Martell</em></span>
+      </div>
+
+      <div class="loop__steps">
+        <div class="step">
+          <span class="step__n">01</span>
+          <div>
+            <div class="step__name">Audit</div>
+            <span class="step__sub">Time &amp; energy</span>
+            <p class="step__desc">Track your daily tasks to identify what <strong>drains your energy</strong> and what <strong>adds value.</strong></p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step__n">02</span>
+          <div>
+            <div class="step__name">Transfer</div>
+            <span class="step__sub">Delegate</span>
+            <p class="step__desc">Delegate the <strong>low-value, energy-draining tasks</strong> to others — AI, software, or a new hire.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step__n">03</span>
+          <div>
+            <div class="step__name">Fill</div>
+            <span class="step__sub">Reinvest</span>
+            <p class="step__desc">Use the freed-up time for <strong>high-value activities</strong> — strategy, marketing, or rest.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="loop__credit">
+      <span class="src">Framework · <strong>Dan Martell</strong> — Buy Back Your Time (2023)</span>
+    </div>
+
+  </div>
+
+  <div class="slide__chrome">
+    <span>34 / 46</span>
+  </div>
+</div>
+</body>
+</html>
